@@ -18,19 +18,19 @@ contract Assessment {
         return balance;
     }
 
-    function prime_square(uint256 n) public payable {
+    function prime_cude(uint256 n) public payable {
         for (uint256 i = 2; i * i <= n; i++) {
             if (n % i != 0) {
-                balance=n*n ;
+                balance=n*n*n ;
             }
         }
     }
 
 
-    function composite_cube(uint256 n) public {
+    function mod_square(uint256 n) public {
        for (uint256 i = 2; i * i <= n; i++) {
             if (n % i == 0) {
-                balance=n*n*n ;
+                balance=n*n ;
             }
         }
     }

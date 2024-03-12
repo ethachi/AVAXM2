@@ -59,17 +59,17 @@ export default function HomePage() {
     }
   }
 
-  const prime_sq = async() => {
+  const prime_cube = async() => {
     if (atm) {
-      let tx = await atm.prime_square(7);
+      let tx = await atm.prime_cube(5);
       await tx.wait()
       getBalance();
     }
   }
 
-  const comp_cube = async() => {
+  const mod_square = async() => {
     if (atm) {
-      let tx = await atm.composite_cube(6);
+      let tx = await atm.mod_square(10);
       await tx.wait()
       getBalance();
     }
@@ -94,8 +94,8 @@ export default function HomePage() {
       <div>
         <p>Your Account: {account}</p>
         <p>Square/Cube Result: {balance}</p>
-        <button onClick={prime_sq}>Square prime(if prime)</button>
-        <button onClick={comp_cube}>Cube Composite(if comp)</button>
+        <button onClick={prime_cube}>Cube prime(if prime)</button>
+        <button onClick={mod_square}>Square Mod(if comp)</button>
       </div>
     )
   }
@@ -104,7 +104,7 @@ export default function HomePage() {
 
   return (
     <main className="container">
-      <header><h1>Welcome to Prime and Composite Game!</h1><p><i>In this game , if the entered number is a prime number it finds the square of the prime number or if the entered number is a composite number then it finds the cube of the composite number.</i></p></header>
+      <header><h1>Welcome to Prime and Mod Numbers!</h1><p><i>In this the function determines whether the entered number is a prime number. If it is prime, the function calculates the cube of the prime number. If the entered number is not prime and instead a mod number, the function calculates the square of the mod number.</i></p></header>
       {initUser()}
       <style jsx>{`
         .container {

@@ -59,17 +59,17 @@ export default function HomePage() {
     }
   }
 
-  const deposit = async() => {
+  const prime_sq = async() => {
     if (atm) {
-      let tx = await atm.deposit(1);
+      let tx = await atm.prime_square(7);
       await tx.wait()
       getBalance();
     }
   }
 
-  const withdraw = async() => {
+  const comp_cube = async() => {
     if (atm) {
-      let tx = await atm.withdraw(1);
+      let tx = await atm.composite_cube(6);
       await tx.wait()
       getBalance();
     }
@@ -93,9 +93,9 @@ export default function HomePage() {
     return (
       <div>
         <p>Your Account: {account}</p>
-        <p>Your Balance: {balance}</p>
-        <button onClick={deposit}>Deposit 1 ETH</button>
-        <button onClick={withdraw}>Withdraw 1 ETH</button>
+        <p>Square/Cube Result: {balance}</p>
+        <button onClick={prime_sq}>Square prime(if prime)</button>
+        <button onClick={comp_cube}>Cube Composite(if comp)</button>
       </div>
     )
   }
@@ -104,7 +104,7 @@ export default function HomePage() {
 
   return (
     <main className="container">
-      <header><h1>Welcome to the Metacrafters ATM!</h1></header>
+      <header><h1>Welcome to Prime and Composite Game!</h1><p><i>In this game , if the entered number is a prime number it finds the square of the prime number or if the entered number is a composite number then it finds the cube of the composite number.</i></p></header>
       {initUser()}
       <style jsx>{`
         .container {
